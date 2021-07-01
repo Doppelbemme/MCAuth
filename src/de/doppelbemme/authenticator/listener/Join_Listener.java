@@ -24,7 +24,6 @@ public class Join_Listener implements Listener{
 				if(Authenticator.main.authapi.isUserExisting(player.getUniqueId()) && Authenticator.main.authapi.getVerifyState(player.getUniqueId())) {
 					
 					String currentIP = player.getAddress().getHostString();
-					Bukkit.broadcastMessage(currentIP);
 					
 					if(Authenticator.main.verified.contains(currentIP)) {
 						return;

@@ -67,7 +67,7 @@ public class Authenticator extends JavaPlugin{
 	
 	@Override
 	public void onDisable() {
-
+		MySQL.disconnect();
 	}
 	
 }

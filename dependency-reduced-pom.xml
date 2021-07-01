@@ -1,20 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.doppelbemme</groupId>
   <artifactId>authenticator</artifactId>
-  <version>1.0.1</version>
   <name>[SpigotMC] 2FA Authenticator</name>
+  <version>1.0.1</version>
   <description>A 2 Factor Authenticator for Spigot</description>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
-    	<resource>
-    		<directory>src</directory>
-    		<filtering>true</filtering>
-    		<includes>
-    			<include>plugin.yml</include>
-    		</includes>
-    	</resource>
+      <resource>
+        <filtering>true</filtering>
+        <directory>src</directory>
+        <includes>
+          <include>plugin.yml</include>
+        </includes>
+      </resource>
     </resources>
     <plugins>
       <plugin>
@@ -27,9 +28,7 @@
           <executable>C:\Program Files\Java\jdk1.8.0_291\bin\javac</executable>
         </configuration>
       </plugin>
-      
       <plugin>
-      	<groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.2.4</version>
         <executions>
@@ -40,7 +39,7 @@
             </goals>
             <configuration>
               <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <transformer>
                   <manifestEntries>
                     <Main-Class>org.sonatype.haven.ExodusCli</Main-Class>
                     <Build-Number>123</Build-Number>
@@ -53,43 +52,18 @@
       </plugin>
     </plugins>
   </build>
-  
-  <!-- MAVEN SHADER -->
-  
-  
-  <!--  REPOS  -->
   <repositories>
-  	<repository>
-  		<id>spigot-repo</id>
-  		<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-  	</repository>
+    <repository>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+    </repository>
   </repositories>
-  
   <dependencies>
-  	<dependency>
-  		<groupId>org.spigotmc</groupId>
-  		<artifactId>spigot-api</artifactId>
-  		<version>1.17-R0.1-SNAPSHOT</version>
-  		<scope>provided</scope>
-  	</dependency>
-  
-	<dependency>
-    	<groupId>commons-codec</groupId>
-    	<artifactId>commons-codec</artifactId>
-    	<version>1.10</version>
-	</dependency>
-	
-	<dependency>
-    	<groupId>de.taimos</groupId>
-    	<artifactId>totp</artifactId>
-    	<version>1.0</version>
-	</dependency>
-
-	<dependency>
-    	<groupId>com.google.zxing</groupId>
-    	<artifactId>javase</artifactId>
-    	<version>3.2.1</version>
-	</dependency>
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>1.17-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
-  
 </project>

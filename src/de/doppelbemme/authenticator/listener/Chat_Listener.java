@@ -28,7 +28,7 @@ public class Chat_Listener implements Listener{
 		Player player = event.getPlayer();
 		String command = event.getMessage();
 		
-		if(!command.contains("auth")) {
+		if(!command.contains("auth") && Authenticator.main.blocked.contains(player)) {
 			event.setCancelled(true);
 			player.sendMessage(Authenticator.main.messages.AuthNeeded);
 		}
