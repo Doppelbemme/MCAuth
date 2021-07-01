@@ -1,0 +1,7 @@
+name: Authenticator
+version: 1.0.0
+author: Doppelbemme
+main: de.doppelbemme.authenticator.main.Authenticator
+api-version: 1.16
+commands:
+  auth:
